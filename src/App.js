@@ -2,18 +2,10 @@ import React from 'react'
 import Loading from './components/Loading'
 import SetupForm from './components/SetupForm'
 import Modal from './components/Modal'
-import { useGlobalContext } from "./components/context/Context"
+import { useGlobalContext } from './components/context/Context'
 
 const App = () => {
-  const {
-    waiting,
-    loading,
-    questions,
-    index,
-    correct,
-    nextQuestion,
-    checkAnswer,
-  } = useGlobalContext()
+  const {waiting,loading,question,index,correct}=useGlobalContext()
   
   if(waiting){
     return <SetupForm/>
