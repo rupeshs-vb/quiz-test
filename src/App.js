@@ -13,7 +13,7 @@ const App = () => {
     correct,
     nextQuestion,
     checkAnswer,
-  } = useGlobalContext
+  } = useGlobalContext()
   
   if(waiting){
     return <SetupForm/>
