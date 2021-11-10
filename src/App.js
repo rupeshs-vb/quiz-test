@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Loading from './components/Loading'
+import SetupForm from './components/SetupForm'
+import Modal from './components/Modal'
+import { useGlobalContext } from "./components/context/Context"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const {
+    waiting,
+    loading,
+    questions,
+    index,
+    correct,
+    nextQuestion,
+    checkAnswer,
+  } = useGlobalContext
+  
+  if(waiting){
+    return <SetupForm/>
+  }
+  if(loading){
+    return <Loading/>
+  }
+  return <main>quiz test</main>
 }
 
-export default App;
+export default App
